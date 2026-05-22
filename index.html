@@ -1,30 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Weather App</title>
+    <title>Smart Weather Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="weather-container">
+<div class="container">
 
-    <h1>Smart Weather App</h1>
+    <h1>🌍 Smart Weather Pro</h1>
+    <p class="subtitle">Real-time Weather with Live Location 📍</p>
 
+    <!-- Search -->
     <div class="search-box">
-        <input type="text" id="cityInput" placeholder="Enter city name">
+        <input type="text" id="search" placeholder="🔍 Enter city name...">
         <button onclick="searchWeather()">Search</button>
     </div>
 
-    <div class="weather-card">
-        <h2 id="cityName">City Name</h2>
-        <p id="temperature">Temperature will appear here</p>
-        <p id="condition">Weather condition will appear here</p>
+    <!-- Theme -->
+    <button class="toggle-btn" onclick="toggleTheme()">🌙 / ☀️</button>
+
+    <!-- Weather Card -->
+    <div class="card">
+        <h2 id="city">--</h2>
+        <img id="icon" />
+        <p id="temp"></p>
+        <p id="desc"></p>
     </div>
+
+    <!-- Forecast -->
+    <h3>📅 5-Day Forecast</h3>
+    <div id="forecast"></div>
+
+    <!-- Map -->
+    <h3>🗺️ Location Map</h3>
+    <div id="map"></div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading hidden">⏳ Loading...</div>
+
+    <!-- Error (FIXED MISSING PART) -->
+    <div id="error" class="error hidden">❌ City not found</div>
 
 </div>
 
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWdFKz8BV1-i0BLyNedGjEseU6mHu9zHY"></script>
+
+<!-- Weather App Script (FIXED: file name) -->
 <script src="script.js"></script>
 
 </body>
